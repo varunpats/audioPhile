@@ -15,7 +15,6 @@ export default function Home() {
         <Nav />
         <hr />
         <Hero />
-        <Button variant="contained" color="#d97d45" />
       </Container>
     </div>
   );
