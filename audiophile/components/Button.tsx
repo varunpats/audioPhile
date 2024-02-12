@@ -1,5 +1,4 @@
 import MuiButton from '@mui/material/Button';
-import { ReactElement } from 'react';
 
 interface Props {
     color: string;

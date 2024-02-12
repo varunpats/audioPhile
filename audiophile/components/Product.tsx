@@ -2,13 +2,15 @@ import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Button from "./Button";
 import ProductCounter from "./ProductCounter";
+import { useAppSelector } from "@/store/hooks";
+import { selectCart } from "@/store/cartSlice";
 
 interface props {
     product: any
 }
 
 export default function Product({ product }: props) {
-    console.log(product);
+    const { cart } = useAppSelector(state => state.cart);
 
     return (
         <Container sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
