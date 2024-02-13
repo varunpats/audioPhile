@@ -9,7 +9,7 @@ function Nav() {
   return (
     <div style={{ color: "#fff", padding: "2rem 0", backgroundColor: "#191919" }}>
       <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Image src="./assets/shared/desktop/logo.svg" alt="logo" height={30} width={150} />
+        <Link href="/"><Image src="./assets/shared/desktop/logo.svg" alt="logo" height={30} width={150} /></Link>
         <ul style={{ textTransform: "uppercase", textDecoration: "none" }}>
           <Link href="/" style={{ color: "#fff", textDecoration: "none", marginRight: "2rem", fontWeight: 700 }}>Home</Link>
           <Link href="/" style={{ color: "#fff", textDecoration: "none", marginRight: "2rem", fontWeight: 700 }}>Headphones</Link>

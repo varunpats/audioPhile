@@ -21,11 +21,18 @@ const cartSlice = createSlice({
     reducers: {
         addToCart: (state, action: PayloadAction<any>) => {
             state.cart.push(action.payload)
+        },
+        startNewCart: (state) => {
+            state.cart.shift()
+        },
+        clearCart: (state) => {
+            state.cart = [{ id: 0, image: "", name: "", count: 0, price: 0 }]
+            state.cart.shift()
         }
     },
 })
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, startNewCart, clearCart } = cartSlice.actions
 
 export const selectCart = (state: RootState) => state.cart.cart;
 

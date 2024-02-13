@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Button from "./Button";
 // import ProductCounter from "./ProductCounter";
-import { addToCart } from "@/store/cartSlice";
+import { addToCart, startNewCart } from "@/store/cartSlice";
 
 interface props {
     product: any
@@ -16,8 +16,6 @@ export default function Product({ product }: props) {
 
     const { cart } = useAppSelector(state => state.cart);
     const dispatch = useDispatch()
-    console.log(cart);
-
 
     return (
         <Container sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -28,8 +26,8 @@ export default function Product({ product }: props) {
                 <Typography sx={{ color: '#727272', fontSize: '1.25rem', marginBottom: '3rem' }}>
                     {product.description}
                 </Typography>
-                <Typography>
-                    {product.price}
+                <Typography sx={{ marginBottom: "1.5rem", fontWeight: 700 }}>
+                    ${product.price}
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     {/* <ProductCounter /> */}
@@ -43,7 +41,7 @@ export default function Product({ product }: props) {
                         <MuiButton onClick={() => setCount(count + 1)}>+</MuiButton>
                     </Box>
 
-                    <Button variant="contained" color="#d97d45" onClick={() => dispatch(addToCart({ id: product.id, name: product.name, price: product.price, itemCount: count, image: product.image?.mobile.replace(".", "") }))}>
+                    <Button variant="contained" color="#d97d45" onClick={() => { dispatch(startNewCart()); dispatch(addToCart({ id: product.id, name: product.name, price: product.price, count: count, image: product.image?.mobile.replace(".", "") })) }}>
                         Add to Cart
                     </Button>
                 </Box>
