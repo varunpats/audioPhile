@@ -3,7 +3,7 @@ import MuiButton from '@mui/material/Button';
 interface Props {
     color: string;
     variant: "text" | "contained" | "outlined";
-    children: string;
+    children: JSX.Element | JSX.Element[] | string;
     sx?: any;
     onClick?: () => void;
 }

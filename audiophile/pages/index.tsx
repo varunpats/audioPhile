@@ -1,7 +1,11 @@
-import CategoryCart from "@/components/CategoryCart";
+import CategoryCardContainer from "@/components/CategoryCardContainer";
 import Hero from "@/components/Hero";
+import YX1earphones from "@/components/Home/YX1earphones";
+import ZX7speaker from "@/components/Home/ZX7speaker";
+import ZX9speaker from "@/components/Home/ZX9speaker";
 import Nav from "@/components/Nav";
-import { Box, Container } from '@mui/material'
+import About from "@/components/Shared/About";
+import { Container } from '@mui/material';
 
 export default function Home() {
   const categories = ["Headphones", "Speakers", "Earphones"]
@@ -19,11 +23,11 @@ export default function Home() {
           <Hero />
         </Container>
       </div>
-      <Box sx={{ margin: "4rem 0 0" }}>
-        <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-          {categories.map((category) => <CategoryCart category={category} />)}
-        </Container>
-      </Box>
+      <CategoryCardContainer />
+      <ZX9speaker />
+      <ZX7speaker />
+      <YX1earphones />
+      <About />
     </div>
   );
 }
