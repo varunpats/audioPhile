@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function About() {
     return (
         <Container>
-            <Box sx={{ display: "flex", marginTop: "8rem" }}>
+            <Box sx={{ display: "flex", margin: "8rem 0" }}>
                 <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", marginRight: "13.9rem" }}>
                     <Typography variant="h4" sx={{ marginBottom: "1.5rem", fontWeight: 500, fontSize: "3rem", textTransform: "uppercase" }}>
                         Bring you the <span style={{ color: "#d87d4a", fontFamily: "roboto" }}>best</span> audio gear

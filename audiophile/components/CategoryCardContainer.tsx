@@ -7,7 +7,7 @@ export default function CategoryCardContainer() {
     return (
         <Box sx={{ margin: "4rem 0 0" }}>
             <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-                {categories.map((category) => <CategoryCart category={category} />)}
+                {categories.map((category) => <CategoryCart key={category} category={category} />)}
             </Container>
         </Box>
     )

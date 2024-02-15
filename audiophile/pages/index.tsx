@@ -5,6 +5,7 @@ import ZX7speaker from "@/components/Home/ZX7speaker";
 import ZX9speaker from "@/components/Home/ZX9speaker";
 import Nav from "@/components/Nav";
 import About from "@/components/Shared/About";
+import Footer from "@/components/Shared/Footer";
 import { Container } from '@mui/material';
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <ZX7speaker />
       <YX1earphones />
       <About />
+      <Footer />
     </div>
   );
 }
