@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Button from "./Button";
 // import ProductCounter from "./ProductCounter";
-import { addToCart, startNewCart } from "@/store/cartSlice";
+import { addToCart } from "@/store/cartSlice";
 
 interface props {
     product: any
@@ -41,7 +41,7 @@ export default function Product({ product }: props) {
                         <MuiButton onClick={() => setCount(count + 1)}>+</MuiButton>
                     </Box>
 
-                    <Button variant="contained" color="#d97d45" onClick={() => { dispatch(startNewCart()); dispatch(addToCart({ id: product.id, name: product.name, price: product.price, count: count, image: product.image?.mobile.replace(".", "") })) }}>
+                    <Button variant="contained" color="#d97d45" onClick={() => { dispatch(addToCart({ id: product.id, name: product.name, price: product.price, count: count, image: product.image?.mobile.replace(".", "") })) }}>
                         Add to Cart
                     </Button>
                 </Box>
