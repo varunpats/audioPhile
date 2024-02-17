@@ -1,12 +1,35 @@
 import CategoryCardContainer from '@/components/CategoryCardContainer';
 import Nav from '@/components/Nav';
 import About from '@/components/Shared/About';
+import CategoryItemImage from '@/components/Shared/CategoryItemImage';
+import CategoryItemText from '@/components/Shared/CategoryItemText';
 import CategoryPageHeader from '@/components/Shared/CategoryPageHeader';
 import Footer from '@/components/Shared/Footer';
-import { Container } from '@mui/material';
-import React from 'react'
+import { Box, Container } from '@mui/material';
+import React, { useEffect, useState } from 'react'
 
 export default function headphones() {
+    const category = "headphones"
+    const [isLoading, setIsLoading] = useState(true);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("/api/hello")
+            .then(res => res.json())
+            .then((res) => {
+                setIsLoading(false)
+                res.map((item: any) => {
+                    if (item.category === category) {
+                        data.push(item)
+                    }
+                })
+            })
+    }, [data])
+
+    if (isLoading) {
+        return <p>Loading...</p>
+    }
+
     return (
         <>
             <div style={{ backgroundColor: "#1a1a1a" }}>
@@ -14,7 +37,15 @@ export default function headphones() {
                     <Nav />
                 </Container>
             </div>
-            <CategoryPageHeader category='Headphones' />
+            <CategoryPageHeader category={category} />
+            {data.map((item: any) => {
+                return (
+                    <Box key={item.id}>
+                        <CategoryItemImage src={item.image.desktop.replace(".","")} name={item.name} />
+                        <CategoryItemText isNew={item.new} name={item.name} description={item.description} id={item.id} />
+                    </Box>
+                )
+            })}
             <CategoryCardContainer />
             <About />
             <Footer />

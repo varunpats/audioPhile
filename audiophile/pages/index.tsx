@@ -18,8 +18,8 @@ export default function Home() {
         backgroundSize: "95%",
         color: "#fff"
       }}>
+        <Nav />
         <Container >
-          <Nav />
           <hr />
           <Hero />
         </Container>
