@@ -3,6 +3,10 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import Nav from '@/components/Nav'
 import Product from '@/components/Product'
+import About from '@/components/Shared/About';
+import Footer from '@/components/Shared/Footer';
+import CategoryCardContainer from '@/components/CategoryCardContainer';
+import ProductFeatures from '@/components/Shared/ProductFeatures';
 
 export default function product() {
     const router = useRouter();
@@ -10,7 +14,7 @@ export default function product() {
 
     const [data, setData] = useState([{ id: "0" }]);
     const [isLoading, setIsLoading] = useState(true);
-    const [product, setProduct] = useState({ id: "0" });
+    const [product, setProduct] = useState({ id: "0", features: "", accessories: [] });
 
     useEffect(() => {
         fetch("/api/hello")
@@ -36,5 +40,9 @@ export default function product() {
     return <Box>
         <Nav />
         <Product product={product} />
+        <ProductFeatures features={product.features} accessories={product.includes} />
+        <CategoryCardContainer />
+        <About />
+        <Footer />
     </Box>
 }
