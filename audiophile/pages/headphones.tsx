@@ -38,12 +38,14 @@ export default function headphones() {
                 </Container>
             </div>
             <CategoryPageHeader category={category} />
-            {data.map((item: any) => {
+            {data.map((item: any, index) => {
                 return (
-                    <Box key={item.id}>
-                        <CategoryItemImage src={item.image.desktop.replace(".","")} name={item.name} />
-                        <CategoryItemText isNew={item.new} name={item.name} description={item.description} id={item.id} />
-                    </Box>
+                    <Container>
+                        <Box key={item.id} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexDirection: index % 2 == 1 ? "row-reverse" : "row", margin: "5rem 0" }}>
+                            <CategoryItemImage src={item.image.desktop.replace(".", "")} name={item.name} />
+                            <CategoryItemText isNew={item.new} name={item.name} description={item.description} id={item.id} />
+                        </Box>
+                    </Container >
                 )
             })}
             <CategoryCardContainer />

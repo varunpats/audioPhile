@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function CategoryItemImage({ src, name }: Props) {
-    return <Image src={src} alt={name} width={500} height={500} />
+    return <Image src={src} alt={name} width={550} height={550} />
 }
