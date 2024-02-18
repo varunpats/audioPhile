@@ -20,7 +20,7 @@ export default function headphones() {
                 setIsLoading(false)
                 res.map((item: any) => {
                     if (item.category === category) {
-                        data.push(item)
+                        data.unshift(item)
                     }
                 })
             })
