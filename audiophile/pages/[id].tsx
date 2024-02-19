@@ -7,6 +7,8 @@ import About from '@/components/Shared/About';
 import Footer from '@/components/Shared/Footer';
 import CategoryCardContainer from '@/components/CategoryCardContainer';
 import ProductFeatures from '@/components/Shared/ProductFeatures';
+import ProductGallery from '@/components/Shared/ProductGallery';
+import Reccomendations from '@/components/Shared/Reccomendations';
 
 export default function product() {
     const router = useRouter();
@@ -14,7 +16,17 @@ export default function product() {
 
     const [data, setData] = useState([{ id: "0" }]);
     const [isLoading, setIsLoading] = useState(true);
-    const [product, setProduct] = useState({ id: "0", features: "", accessories: [] });
+    const [product, setProduct] = useState({
+        id: "0",
+        features: "",
+        accessories: [],
+        gallery: {
+            first: { desktop: "" },
+            second: { desktop: "" },
+            third: { desktop: "" }
+        },
+        others: []
+    });
 
     useEffect(() => {
         fetch("/api/hello")
@@ -40,8 +52,10 @@ export default function product() {
     return <Box>
         <Nav />
         <Product product={product} />
-        <ProductFeatures features={product.features} accessories={product.includes} />
+        <ProductFeatures features={product.features} accessories={product.includes} gallery={product.gallery} />
         <CategoryCardContainer />
+        <ProductGallery gallery={product.gallery} />
+        <Reccomendations recommendations={product.others} />
         <About />
         <Footer />
     </Box>
