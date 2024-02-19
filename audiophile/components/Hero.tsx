@@ -10,7 +10,7 @@ function Hero() {
             <Typography sx={{ color: '#727272', fontSize: '1.25rem', marginBottom: '3rem' }}>Experience natural, lifelike audio and exceptional build quality made
                 for the passionate music enthusiast.</Typography>
             <Button variant="contained" color="#d97d45">
-                <Link href="/4" style={{ textDecoration: "none", color: "#fff" }}>
+                <Link href="/xx99-mark-two-headphones" style={{ textDecoration: "none", color: "#fff" }}>
                     See Product
                 </Link>
             </Button>

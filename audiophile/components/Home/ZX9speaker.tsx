@@ -16,7 +16,7 @@ export default function ZX9speaker() {
                     <Typography variant='h2' sx={{ fontWeight: 600, fontSize: '4.5rem', textTransform: "uppercase", marginBottom: '2rem' }}>ZX9 Speaker</Typography>
                     <Typography sx={{ fontSize: '1.25rem', marginBottom: '3rem' }}>Upgrade to premium speakers that are phonomenally built to deliver truly remarkable sound.</Typography>
                     <Button variant="contained" color="#000">
-                        <Link href="/6" style={{ textDecoration: "none", color: "#fff" }} >
+                        <Link href="/zx9-speaker" style={{ textDecoration: "none", color: "#fff" }} >
                             SEE PRODUCTS
                         </Link>
                     </Button>

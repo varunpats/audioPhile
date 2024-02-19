@@ -11,7 +11,7 @@ export default function YX1earphones() {
                 <Box sx={{ backgroundColor: "#f1f1f1", width: "50%", marginLeft: "2rem", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "6.5rem" }}>
                     <Typography variant="h4" sx={{ marginBottom: "1rem", fontWeight: 500 }}>YX1 Earphone</Typography>
                     <Button variant="outlined" color="#000">
-                        <Link href="/1" style={{ textDecoration: "none" }} >
+                        <Link href="/yx1-earphones" style={{ textDecoration: "none" }} >
                             SEE PRODUCTS
                         </Link>
                     </Button>

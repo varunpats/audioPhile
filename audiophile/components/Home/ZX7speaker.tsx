@@ -8,7 +8,7 @@ export default function ZX7speaker() {
             <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", backgroundImage: "url(/assets/home/desktop/image-speaker-zx7.jpg)", padding: "0 4rem", height: "20rem", backgroundRepeat: "no-repeat", WebkitBackgroundSize: "cover" }}>
                 <Typography variant="h4" sx={{ marginBottom: "1rem", fontWeight: 500 }}>ZX7 Speaker</Typography>
                 <Button variant="outlined" color="#000">
-                    <Link href="/5" style={{ textDecoration: "none" }} >
+                    <Link href="/zx7-speaker" style={{ textDecoration: "none" }} >
                         SEE PRODUCTS
                     </Link>
                 </Button>

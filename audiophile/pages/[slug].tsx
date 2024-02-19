@@ -12,7 +12,7 @@ import Reccomendations from '@/components/Shared/Reccomendations';
 
 export default function product() {
     const router = useRouter();
-    const { id } = router.query;
+    const { slug } = router.query;
 
     const [data, setData] = useState([{ id: "0" }]);
     const [isLoading, setIsLoading] = useState(true);
@@ -35,12 +35,12 @@ export default function product() {
                 setData(res)
                 setIsLoading(false)
                 res.map((item: any) => {
-                    if (item.id.toString() === id) {
+                    if (item.slug === slug) {
                         setProduct(item)
                     }
                 })
             })
-    }, [id])
+    }, [slug])
 
     if (isLoading) {
         return <Box>
