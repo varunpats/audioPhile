@@ -6,9 +6,10 @@ import Image from "next/image";
 import Button from "./Button";
 // import ProductCounter from "./ProductCounter";
 import { addToCart } from "@/store/cartSlice";
+import { APIProduct } from "@/types";
 
 interface props {
-    product: any
+    product: APIProduct;
 }
 
 export default function Product({ product }: props) {

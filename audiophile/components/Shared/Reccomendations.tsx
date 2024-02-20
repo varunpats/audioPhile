@@ -2,9 +2,10 @@ import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Button from "../Button";
 import Link from "next/link";
+import { RecommendationType } from "@/types";
 
 interface Props {
-    recommendations: any[]
+    recommendations: RecommendationType[]
 }
 
 export default function Reccomendations({ recommendations }: Props) {
@@ -34,15 +35,15 @@ export default function Reccomendations({ recommendations }: Props) {
                                     {product.name}
                                 </Typography>
                                 <Button variant="contained" color="#d87d4a">
-                                    <Link href={`/${product.slug}`} style={{textDecoration: "none", color: "#fff"}}>
+                                    <Link href={`/${product.slug}`} style={{ textDecoration: "none", color: "#fff" }}>
                                         See Product
                                     </Link>
-                            </Button>
+                                </Button>
                             </Box>
-                )
+                        )
                     })}
+                </Box>
             </Box>
-        </Box>
         </Container >
     )
 }

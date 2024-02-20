@@ -9,6 +9,7 @@ import CategoryCardContainer from '@/components/CategoryCardContainer';
 import ProductFeatures from '@/components/Shared/ProductFeatures';
 import ProductGallery from '@/components/Shared/ProductGallery';
 import Reccomendations from '@/components/Shared/Reccomendations';
+import { APIProduct } from '@/types';
 
 export default function product() {
     const router = useRouter();
@@ -16,16 +17,88 @@ export default function product() {
 
     const [data, setData] = useState([{ id: "0" }]);
     const [isLoading, setIsLoading] = useState(true);
-    const [product, setProduct] = useState({
-        id: "0",
-        features: "",
-        accessories: [],
-        gallery: {
-            first: { desktop: "" },
-            second: { desktop: "" },
-            third: { desktop: "" }
+    const [product, setProduct] = useState<APIProduct>({
+        id: 0,
+        slug: "",
+        name: "",
+        image: {
+            mobile: "",
+            tablet: "",
+            desktop: "",
         },
-        others: []
+        category: "",
+        new: true,
+        price: 0,
+        description: "",
+        features: "",
+        includes: [
+            {
+                quantity: 0,
+                item: "",
+            },
+            {
+                quantity: 0,
+                item: "",
+            },
+            {
+                quantity: 0,
+                item: "",
+            },
+            {
+                quantity: 0,
+                item: "",
+            },
+            {
+                quantity: 0,
+                item: "",
+            },
+        ],
+        gallery: {
+            first: {
+                mobile: "",
+                tablet: "",
+                desktop: "",
+            },
+            second: {
+                mobile: "",
+                tablet: "",
+                desktop: "",
+            },
+            third: {
+                mobile: "",
+                tablet: "",
+                desktop: "",
+            },
+        },
+        others: [
+            {
+                slug: "",
+                name: "",
+                image: {
+                    mobile: "",
+                    tablet: "",
+                    desktop: "",
+                },
+            },
+            {
+                slug: "",
+                name: "",
+                image: {
+                    mobile: "",
+                    tablet: "",
+                    desktop: "",
+                },
+            },
+            {
+                slug: "",
+                name: "",
+                image: {
+                    mobile: "",
+                    tablet: "",
+                    desktop: "",
+                },
+            },
+        ],
     });
 
     useEffect(() => {
@@ -52,7 +125,7 @@ export default function product() {
     return <Box>
         <Nav />
         <Product product={product} />
-        <ProductFeatures features={product.features} accessories={product.includes} gallery={product.gallery} />
+        <ProductFeatures features={product.features} accessories={product.includes} />
         <CategoryCardContainer />
         <ProductGallery gallery={product.gallery} />
         <Reccomendations recommendations={product.others} />

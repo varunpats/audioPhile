@@ -5,20 +5,21 @@ import CategoryItemImage from '@/components/Shared/CategoryItemImage';
 import CategoryItemText from '@/components/Shared/CategoryItemText';
 import CategoryPageHeader from '@/components/Shared/CategoryPageHeader';
 import Footer from '@/components/Shared/Footer';
+import { APIProduct } from '@/types';
 import { Box, Container } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 
 export default function headphones() {
     const category = "headphones"
     const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<APIProduct[]>([]);
 
     useEffect(() => {
         fetch("/api/hello")
             .then(res => res.json())
             .then((res) => {
                 setIsLoading(false)
-                res.map((item: any) => {
+                res.map((item: APIProduct) => {
                     if (item.category === category) {
                         data.unshift(item)
                     }
@@ -38,7 +39,7 @@ export default function headphones() {
                 </Container>
             </div>
             <CategoryPageHeader category={category} />
-            {data.map((item: any, index) => {
+            {data.map((item: any, index: number) => {
                 return (
                     <Container>
                         <Box key={item.id} sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexDirection: index % 2 == 1 ? "row-reverse" : "row", margin: "5rem 0" }}>
