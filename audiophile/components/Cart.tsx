@@ -4,6 +4,7 @@ import Button from './Button'
 import Image from 'next/image'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { clearCart } from '@/store/cartSlice'
+import Link from 'next/link'
 
 export default function Cart() {
     const { cart } = useAppSelector((state) => state.cart)
@@ -53,7 +54,11 @@ export default function Cart() {
                     <Typography>Total</Typography>
                     <Typography>$$$</Typography>
                 </Box>
-                <Button variant="contained" color="#d97d45" sx={{ width: "100%", marginTop: "1rem" }}>Checkout</Button>
+                <Button variant="contained" color="#d97d45" sx={{ width: "100%", marginTop: "1rem" }}>
+                    <Link href='/checkout' style={{ textDecoration: "none", color: "#fff" }}>
+                        Checkout
+                    </Link>
+                </Button>
             </Box>
         </Box>
     )
